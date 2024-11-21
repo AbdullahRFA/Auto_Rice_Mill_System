@@ -64,3 +64,6 @@ header{
     background-color: antiquewhite;
     text-align: center;
 }
+header h1 span{
+    color: #ff0044;
+}
