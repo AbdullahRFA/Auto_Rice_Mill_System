@@ -1,0 +1,1 @@
+console.log("Auto Rice Mill Management System Loaded");
