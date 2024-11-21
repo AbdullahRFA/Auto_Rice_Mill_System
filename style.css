@@ -1,47 +1,66 @@
-*{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 body {
-    
-    width: 100%;
-    height: 100vh;
+  height: 100vh;
+  width: 100%;
 }
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4caf50;
+  width: 100%;
+  height: 60px;
 }
-
 nav ul {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  position: relative; /* Required for ::after positioning */
+  transition: transform 0.5s, background-color 0.5s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Positioned at the bottom of the link */
+  left: 0;
+  width: 0%; /* Initially invisible */
+  height: 3px;
+  background-color: red; /* Highlight color */
+  transition: width 0.5s ease-in-out; /* Smooth animation for width */
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Expands fully on hover */
+}
+
+header{
+    width: 100%;
+    height: 300px;
     display: flex;
     justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 2rem;
+    align-items: center;
+    background-color: antiquewhite;
     text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
 }
