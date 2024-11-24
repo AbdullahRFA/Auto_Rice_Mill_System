@@ -1,0 +1,101 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to right, #134e5e, #71b280); /* Green gradient background */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Login Box */
+.login {
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    text-align: center;
+}
+
+/* Login Title */
+.login h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    color: #a8dadc;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Inputs */
+input {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #71b280; /* Focused border color */
+    box-shadow: 0 0 5px rgba(113, 178, 128, 0.5); /* Glow effect */
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Button Styling */
+button {
+    height: 45px;
+    background-color: #71b280; /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #134e5e; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .login {
+        width: 90%; /* Make the box responsive on smaller screens */
+        padding: 20

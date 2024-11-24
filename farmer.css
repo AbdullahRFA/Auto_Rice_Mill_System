@@ -1,108 +1,123 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #4caf50, #c45b5b);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #4caf50,
+    #c45b5b
+  ); /* Diagonal gradient for a dynamic effect */
 }
 
 /* Container Styling */
 .container {
-    width: 90%; /* Adjust for smaller screens */
-    max-width: 400px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Subtle depth */
+  text-align: center;
 }
 
 /* Heading Styling */
-.container .heading h2 a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
 .heading {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.heading #log a,
-.heading #reg a {
-    position: relative;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.heading h2 {
+  margin: 0;
 }
 
-/* Log Link */
-.heading #log a {
-    font-size: 20px;
-    margin-right: 70px;
-    color: #4caf50;
-    transition: color 0.3s ease;
+.heading h2 a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff; /* Default link color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth animations */
+  position: relative;
 }
 
-.heading #log a:hover {
-    color: #81c784; /* Slightly lighter green on hover */
+/* Registration Link */
+#reg a {
+  color: #e91e63; /* Initial color for Registration */
 }
 
-/* Reg Link */
-.heading #reg a {
-    font-size: 20px;
-    margin-left: 40px;
-    color: #e91e63;
-    transition: color 0.3s ease;
+#reg a:hover {
+  color: #f06292; /* Light pink on hover */
+  transform: translateY(-3px); /* Lift effect */
 }
 
-.heading #reg a:hover {
-    color: #f06292; /* Slightly lighter pink on hover */
+/* Login Link */
+#log a {
+  color: #4caf50; /* Initial color for Login */
+}
+
+#log a:hover {
+  color: #81c784; /* Light green on hover */
+  transform: translateY(-3px); /* Lift effect */
 }
 
 /* Underline Effect */
-.heading #log a::after,
-.heading #reg a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 3px;
-    width: 0;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+.heading h2 a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
 }
 
-.heading #log a:hover::after,
-.heading #reg a:hover::after {
-    width: 100%;
+#reg a:hover::after,
+#log a:hover::after {
+  width: 100%; /* Full-width underline on hover */
 }
-
+#reg {
+  padding-top: 15px;
+  padding-left: 50px;
+}
+#log {
+  padding-top: 15px;
+  padding-right: 80px;
+}
 /* Responsive Design */
 @media (max-width: 500px) {
-    .container {
-        padding: 15px;
-    }
+  .container {
+    padding: 20px;
+  }
 
-    .heading #log a, 
-    .heading #reg a {
-        font-size: 18px;
-        margin: 0 10px; /* Adjust spacing for smaller screens */
-    }
+  .heading {
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Add spacing between links */
+  }
+
+  .heading h2 a {
+    font-size: 18px;
+  }
+  #reg {
+    padding-left: 0;
+  }
+  #log {
+    padding-right: 0;
+  }
 }
