@@ -10,152 +10,124 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Body Styles */
 body {
-    margin-top: 60px;
-    min-height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    line-height: 1.6; /* Improves readability */
+    min-height: 100vh;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 /* Navigation Bar */
 nav {
-    display: flex;
-    align-items: center;
-    background-color: #4caf50;
-    width: 100%;
-    height: 60px;
-    padding: 0 20px;
-    background-attachment: fixed;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #4caf50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    margin-left: auto;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 15px;
 }
 
 nav ul li a {
     display: inline-block;
-    padding: 10px 15px;
-    border-radius: 10px;
     text-decoration: none;
-    color: white;
-    position: relative;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-    background-color: rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: red;
-    transition: width 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after,
-nav ul li a:focus::after {
-    width: 100%;
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 /* Header Section */
 header {
-    width: 100%;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #96887a;
+    margin-top: 60px;
     text-align: center;
-    padding: 20px;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: #fff;
 }
 
 header h1 {
     font-size: 2.5rem;
-    color: #333;
+    line-height: 1.4;
 }
 
 header h1 span {
     color: #ff0044;
+    font-weight: bold;
 }
 
 /* Main Content Section */
 main {
-    width: 100%;
-    min-height: calc(100vh - 140px); /* Dynamic height for main content */
+    flex: 1;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #c88432, #c814c5);
-    color: white;
+    background: #fafafa;
     text-align: center;
-    padding: 20px;
 }
 
 main h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 main p {
     font-size: 1.2rem;
+    color: #666;
 }
 
 /* Footer Section */
 footer {
-    background-color: #000;
-    width: 100%;
-    height: 80px;
+    background-color: #333;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    font-size: 1rem;
-    margin-top: auto;
+    padding: 20px;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     nav {
-        height: 70px;
+        overflow: auto; /* Allow scrolling when content overflows */
     }
 
     nav ul {
-        margin: auto;
         flex-direction: column;
-        overflow-y: auto;
-        height: 100%;
+        align-items: center;
+        gap: 10px;
     }
 
     nav ul li {
-        width: 100%;
-        text-align: center;
         margin: 10px 0;
     }
 
     nav ul li a {
-        font-size: 1.2rem;
-        padding: 15px;
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 
     header h1 {
@@ -168,5 +140,19 @@ footer {
 
     main p {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main h2 {
+        font-size: 1.2rem;
     }
 }
